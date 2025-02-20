@@ -72,6 +72,49 @@ Before you begin, ensure you have the following installed on your system:
    php artisan serve
    ```
 
+### Docker Setup and Run Tutorial
+
+Follow these steps to set up and run the project using Docker:
+
+1. **Copy the `.env.example` to `.env**
+   ```bash
+   cp .env.example .env
+   ```
+
+2. **Build the Docker image**
+   ```bash
+   make rebuild
+   ```
+
+3. **Start the Docker containers**
+   ```bash
+   make start
+   ```
+
+4. **Install Composer dependencies**
+   ```bash
+   make composer cmd=install
+   ```
+
+5. **Generate application key**
+   ```bash
+   make artisan cmd=key:generate
+   ```
+
+6. **Run database migrations**
+   ```bash
+   make artisan cmd=migrate
+   ```
+
+7. **Stop the Docker containers**
+   ```bash
+   make stop
+   ```
+
+These steps will help you set up and run the project using Docker. Ensure you have Docker and Docker Compose installed on your system before proceeding.
+
+To access your Laravel application running in Docker, you can open your web browser and navigate to http://localhost:8080. This URL corresponds to the port mapping defined in your docker-compose.yml file, where port 8080 on your host machine is forwarded to port 80 in the Docker container running your application.
+
 ### Monitoring Device Status
 
 You can monitor the status of devices by querying the `devices` table where the `online` field indicates the last time the device was online.
@@ -79,7 +122,7 @@ You can monitor the status of devices by querying the `devices` table where the 
 ## Postman Collection
 
 For testing and interacting with the API endpoints, you can use the provided Postman collection:
-[Postman Collection](https://github.com/saifulcoder/adms-server-ZKTeco/blob/main/ADMS server ZKTeco.postman_collection.json)
+[Postman Collection](https://github.com/agussuwerdo/adms-server-ZKTeco/blob/main/ADMS%20server%20ZKTeco.postman_collection.json)
 
 
 ## Authors
